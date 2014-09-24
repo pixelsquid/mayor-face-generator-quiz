@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<!-- CSS_START -->
+		<link rel="stylesheet" href="css/styles.css"/>
+		<!-- CSS_END -->
+		<!-- JS_START -->
+		<script src='js/libs/jquery-1.6.3.js' type="text/javascript"></script>
+		<script src='js/libs/underscore.js' type="text/javascript"></script>
+		<script src='js/libs/jquery.google.spreadsheet.js' type="text/javascript"></script>
+		<script src='js/libs/mayortest.js' type="text/javascript"></script>
+		<!-- JS_END -->
+		<title>Which mayor are you?</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="loading"><img src="images/preloader.gif" alt="" width="32" height="32" />
+				<p>
+					LOADING
+				</p>
+			</div>
+			<div id="splash">
+				<div id="splash-image"></div>
+				<div id="splashText">
+					<h3>Which mayor for London?</h3>
+					<p><strong>Help make up your mind by taking our test...</strong> Build your own custom mayor by choosing from a selection of policy statements taken from the Conservative, Labour, Lib Dem and Green candidates' manifestos...</p>
+				</div>
+				<div id="splash-results-button">Skip the test and see the results</div>
+				<div id="take-the-test-button">Take the test</div>
+			</div>
+			
+			<div class="header">
+				<h2 id="main-heading">The mayor machine</h2>
+				<h2 id="category-heading"></h2>
+				<div id="other-candidates">Still not happy? <a href="#">Click here</a> for links to other candidates</div>
+			</div>
+			
+			<div id="aboutYouPage">
+				<div class="sub-header"></div>
+				<div class="mayorSet" id="mayorSet">
+					<div class="q-box" id ="which-mayor">Do you have a preferred candidate?</div>
+				<div class="mayor-button" id="mayor-button_0"><img src="images/boris.jpg" width="62" height="62"/>Boris</div>
+				<div class="mayor-button" id="mayor-button_1"><img src="images/brian.jpg" width="62" height="62" />Brian</div>
+				<div class="mayor-button" id="mayor-button_2"><img src="images/jenny.jpg" width="62" height="62" />Jenny</div>
+				<div class="mayor-button" id="mayor-button_3"><img src="images/ken.jpg" width="62" height="62" />Ken</div>
+				<div class="mayor-button mayorselect" id="mayor-button_4"><img src="images/noPreference.jpg" width="62" height="62" />No preference</div>
+				</div>
+				
+				<div class="locationSet" id="locationSet">
+					<div class="q-box" id ="whereabouts">Whereabouts in London are you?</div>
+					<div id="compass"></div>
+				<div class="direction-button" id="direction-button_0"></div>
+				<div class="direction-button" id="direction-button_1"></div>
+				<div class="direction-button" id="direction-button_2"></div>
+				<div class="direction-button" id="direction-button_3"></div>
+
+				
+				
+				<div id ="innerOuter">Are you in inner or outer London?</div>
+				<div id ="innerOuterBackground"></div>
+				<div class="innerOuter-button" id="innerOuter-button_0"></div>
+				<div class="innerOuter-button" id="innerOuter-button_1"></div>
+				
+				<div id="explainer">Click on a compass point and select from inner or outer</div>
+				</div>
+				
+				
+				
+			</div>
+			
+			
+			<div id="results">
+				<div id="mayor-face">
+					<div class="questionSlice" id="questionSlice_0"><div class="questionNumber">1</div></div>
+					<div class="questionSlice" id="questionSlice_1"><div class="questionNumber">2</div></div>
+					<div class="questionSlice" id="questionSlice_2"><div class="questionNumber">3</div></div>
+					<div class="questionSlice" id="questionSlice_3"><div class="questionNumber">4</div></div>
+					<div class="questionSlice" id="questionSlice_4"><div class="questionNumber">5</div></div>
+					<div class="questionSlice" id="questionSlice_5"><div class="questionNumber">6</div></div>
+					<div class="questionSlice" id="questionSlice_6"><div class="questionNumber">7</div></div>
+					<div class="questionSlice" id="questionSlice_7"><div class="questionNumber">8</div></div>
+					<div class="questionSlice" id="questionSlice_8"><div class="questionNumber">9</div></div>
+					<div class="questionSlice" id="questionSlice_9"><div class="questionNumber">10</div></div>
+				</div>
+				
+				<div class="click-button" id="shuffle-button">Shuffle</div>
+				<div class="click-button" id="question-button">Sort by question</div>
+				<div class="click-button" id="reset-button">Reset</div>
+				<div class="explain-text" id="explain-text">Each slice in the portrait above corresponds to a question. Click on a slice to view details and find out which policy won</div>
+				<div id="info">
+					<div id="question-info-holder">
+						<div id="question-number"></div>
+						<div id="close-button"></div>
+						<div class="question-info-winner" id="question-info_0"></div>
+						<div class="question-info" id="question-info_1"></div>
+						<div class="question-info" id="question-info_2"></div>
+						<div class="question-info" id="question-info_3"></div>
+					</div>
+					<div id="share-button">Share your mayor...</div>
+					<div id="infoNavs">
+						<div class="nav" id="nav_0">Your mayor</div>
+						<div class="nav" id="nav_1">Your area</div>
+						<div class="nav" id="nav_2">All of London</div>
+						<div class="nav" id="nav_3">London by area</div>
+					</div>
+					<div id="infoHolder">	
+					</div>
+					<div id="filterButtons">
+						<div id="changeArea">Change area:</div>
+						<div class="filterSet" id="directionSet">
+			
+							<div class="select-direction-button select-button filterselect" id="select-direction-button_0">N</div>
+							<div class="select-direction-button select-button filterdeselect" id="select-direction-button_1">S</div>
+							<div class="select-direction-button select-button filterdeselect" id="select-direction-button_2">E</div>
+							<div class="select-direction-button select-button filterdeselect" id="select-direction-button_3">W</div>
+						</div>
+						<div class="filterSet" id="inOutSet">
+							<div class="select-inout-button select-button filterselect" id="select-inout-button_0">Inner</div>
+							<div class="select-inout-button select-button filterdeselect" id="select-inout-button_1">Outer</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			<div class="footer">
+				<div class="click-button-georgia" id="next-button">Next</div>
+			</div>
+			<div id="pollScreener"><div id="pollWait"><img src="images/preloader.gif" alt="" width="32" height="32" /><p>Building mayors... Please wait</p></div></div>
+			<div id="bubble"></div>
+			<div id="other-candidates-popup">
+				<div id="candi-close"></div>
+				<div class="other-candidate"><a href="http://www.siobhanformayor.com/policies_2.html" target="–blank">Siobhan Benita</a><br>Independent<div class="other-cand-pic" id="siobhanPic"></div></div>
+				<div class="other-candidate"><a href="http://www.bnp.org.uk/sites/default/files/gla_manifesto2012.pdf" target="–blank">Carlos Cortiglia</a><br>British National Party<div class="other-cand-pic" id="carlosPic"></div></div>
+				<div class="other-candidate"><a href="http://www.indhome.com/londonmayor/wp-content/uploads/2012/03/UKIPLondonManifesto.pdf" target="–blank">Lawrence Webb</a><br>United Kingdom Indepenence Party<div class="other-cand-pic" id="lawrencePic"></div></div>
+			</div>
+		</div>
+	</body>
+</html>
